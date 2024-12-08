@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by Cuisine</title>
+    <link rel="stylesheet" href="/searchStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Search Restaurants by Cuisine</h1>
+    </header>
+
+    <div class="container">
+        <form action="/search/cuisine" method="POST">
+            <div class="form-group">
+                <label for="cuisine">Cuisine Type:</label>
+                <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian, Chinese" required>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+
+        <% if (error) { %>
+            <div class="error"><%= error %></div>
+        <% } %>
+
+        <% if (restaurants) { %>
+            <h2>Search Results</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Borough</th>
+                        <th>Cuisine</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% restaurants.forEach(restaurant => { %>
+                        <tr>
+                            <td><%= restaurant.name %></td>
+                            <td><%= restaurant.borough %></td>
+                            <td><%= restaurant.cuisine %></td>
+                            <td>
+                                <%= restaurant.address.building %> <%= restaurant.address.street %>, <%= restaurant.address.zipcode %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Project Restaurants. All rights reserved.</p>
+    </footer>
+</body>
+</html>
