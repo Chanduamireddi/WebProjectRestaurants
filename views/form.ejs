@@ -38,10 +38,12 @@
         <% } %>
 
         <% if (restaurants) { %>
+            <!-- Search results for user search -->
             <h2>Search Results</h2>
             <table class="results-table">
                 <thead>
                     <tr>
+                        <!-- Table Header -->
                         <th>Name</th>
                         <th>Borough</th>
                         <th>Cuisine</th>
@@ -49,6 +51,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Restaurant details in table format -->
                     <% restaurants.forEach(restaurant => { %>
                         <tr>
                             <td><%= restaurant.name %></td>

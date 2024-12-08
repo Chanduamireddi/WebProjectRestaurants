@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    padding-top: 60px; /* Adjust to prevent overlap with the fixed header */
+    padding-top: 60px;
 }
 
 /* Header Styles */
@@ -15,13 +15,13 @@ header {
     padding: 5px;
     text-align: center;
     font-size: 15px;
-    height: 60px; /* Set header height */
-    position: fixed; /* Makes header fixed at the top */
+    height: 60px;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ensure header spans the full width */
-    z-index: 1000; /* Keeps header above all other elements */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for visibility */
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styles */
@@ -37,7 +37,7 @@ footer {
 
 /* Container */
 .container {
-    max-width: 800px; /* Increased container width */
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -53,7 +53,7 @@ form {
 .search-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Spacing between rows */
+    gap: 15px;
 }
 
 .form-row {
@@ -73,18 +73,18 @@ label {
 }
 
 input {
-    width: calc(100% - 20px); /* Prevent fields from bleeding out of container */
+    width: calc(100% - 20px);
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin: 0 10px; /* Adds spacing between fields */
+    margin: 0 10px;
 }
 
 button {
     padding: 10px;
     font-size: 16px;
-    background-color: #000; /* Black buttons */
+    background-color: #000;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -92,7 +92,7 @@ button {
 }
 
 button:hover {
-    background-color: #333; /* Slightly lighter shade on hover */
+    background-color: #333;
 }
 
 .error {
@@ -116,7 +116,7 @@ button:hover {
 }
 
 .results-table th {
-    background-color: #000; /* Black header for table */
+    background-color: #000;
     color: #fff;
     font-weight: bold;
 }

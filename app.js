@@ -8,6 +8,7 @@ const formRoutes = require('./routes/form');
 const authRoutes = require('./routes/auth');
 const searchRoutes = require('./routes/search');
 
+// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
@@ -32,6 +33,7 @@ app.use('/search/cuisine', searchRoutes);
 // Connect to the database and start the server
 const PORT = process.env.PORT || 3000;
 
+// Initialize database connection
 initializeDB(process.env.MONGO_URI)
     .then(() => {
         app.listen(PORT, () => {

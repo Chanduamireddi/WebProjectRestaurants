@@ -13,11 +13,12 @@ router.post('/register', async (req, res) => {
     }
 
     try {
+        // Check if the username already exists
         const existingUser = await User.findOne({ username });
         if (existingUser) {
             return res.status(400).json({ error: 'Username already exists.' });
         }
-
+        // Save the new user to the database
         const user = new User({ username, password });
         await user.save();
         res.status(201).json({ message: 'User registered successfully.' });
@@ -35,7 +36,9 @@ router.post('/login', async (req, res) => {
     }
 
     try {
+        // Find user in the database
         const user = await User.findOne({ username });
+        // Validate credentials
         if (!user || !(await user.comparePassword(password))) {
             return res.status(401).json({ error: 'Invalid credentials.' });
         }
